@@ -46,5 +46,6 @@ def csv_table_to_html(csv_table_address):
         f.write(html)
     f.close()
 
+# To use the function:
 csv_table_address = "C:\\Users\\12488\\Downloads\\species_codes.csv"
 csv_table_to_html(csv_table_address)
