@@ -1,0 +1,50 @@
+import re
+import airium
+
+def csv_table_to_html(csv_table_address):
+    csv_table = open(csv_table_address, "r")
+    list = []
+    for line in csv_table.readlines():
+        x = re.split("\\n", line)
+        y = str(x[0])
+        z = re.split(",", y)
+        list.append(z)
+    csv_table.close()
+
+    a = airium.Airium()
+    filename_html = "demo.html"
+    with open(filename_html, 'w') as f:
+        a('<!DOCTYPE html>')
+        with a.html(lang="pl"):
+            with a.head():
+                a.meta(charset="utf-8")
+                a.meta(name="viewport", content="width=device-width, initial-scale=1.0")
+                with a.title():
+                    a("HTML Table Display")
+                with a.style():
+                    a("th, td \n"
+                    "\t\t{padding: 3px;}\n"
+                    "\ttr:hover \n"
+                    "\t\t{background-color: #D3D3D3;}\n"
+                    "\ttable, th, td {\n"
+                    "\t\tborder: 1px solid black;\n"
+                    "\t\tborder-collapse: collapse;}")
+            with a.body():
+                with a.table():
+                    with a.tbody():
+                        for i in list:
+                            index_i = list.index(i)
+                            with a.tr():
+                                for j in i:
+                                    if index_i == 0:
+                                        with a.th():
+                                            a(j)
+                                    else:
+                                        with a.td():
+                                            a(j)
+        html = str(a)
+        f.write(html)
+    f.close()
+
+csv_table_address = "C:\\Users\\12488\\Downloads\\species_codes.csv"
+csv_table_to_html(csv_table_address)
