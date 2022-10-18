@@ -24,7 +24,7 @@ import airium
 To begin creating the function <span style="color:red">csv_table_to_html</span>...
 
 
-*Note: All of <span style="color:orange">Sections 2-3</span> are contained within the 'csv_table_to_html(csv_table_address):'*
+*Note: All of <span style="color:orange">Sections 2-3</span> are contained within the 'def csv_table_to_html(csv_table_address):'*
 
 ```
 def csv_table_to_html(csv_table_address):
