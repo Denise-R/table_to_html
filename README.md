@@ -5,7 +5,7 @@ Denise Rauschendorfer
 
 # __CSV_Table_to_HTML__
 
-In this repository a function, "<span style="color:red">csv_table_to_html</span>", is defined that transforms any CSV table into a html file.
+In this repository a function, "<span style="color:red">csv_table_to_html</span>", is defined that transforms any CSV table into a html file. This function was originally created to help my brother, James Rauschendorfer, upload supplimental information to a website for his pHD; however, this function may also be a useful way to easily share data and upload a CSV table to a website.
 
 The following code was executed using Python 3.10.7. 
 
