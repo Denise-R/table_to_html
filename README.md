@@ -73,8 +73,7 @@ To accomplish this, the following steps are taken:
       - An if/else statement is used so that the first row of <span style="color:blue">list</span> (<span style="color:blue">i</span> == 0) is nested within the HTML table header tag (<<span style="color:blue">th</span>>) and every other row (<span style="color:blue">i</span> != 0) is nested within the HTML table data tag (<<span style="color:blue">td</span>>).
 8. Once this process has repeated for all the values (<span style="color:blue">j</span>) in every line (<span style="color:blue">i</span>) of the array/nested-list <span style="color:blue">list</span>, the for loops are broken.
 9. All of the HTML code that was added to <span style="color:blue">a</span> is then converted into a string titled <span style="color:blue">html</span>.
-10. <span style="color:blue">html</span> is appended to the file <span style="color:blue">f</span> ("<span style="color:blue">table.html</span>") and the file <span style="color:blue">f</span> is closed.
-11. 
+10. <span style="color:blue">html</span> is appended to the file <span style="color:blue">f</span> ("<span style="color:blue">table.html</span>") and the file <span style="color:blue">f</span> is closed. 
 
 ```
     a = airium.Airium()
@@ -145,7 +144,7 @@ def csv_table_to_html(csv_table_address):
     csv_table.close()
 
     a = airium.Airium()
-    filename_html = "demo.html"
+    filename_html = "table.html"
     with open(filename_html, 'w') as f:
         a('<!DOCTYPE html>')
         with a.html(lang="pl"):
