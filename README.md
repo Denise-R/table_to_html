@@ -53,24 +53,24 @@ def csv_table_to_html(csv_table_address):
 In this section, a HTML file titled <span style="color:blue">table.html</span> is created that contains HTML code to represent the CSV table (<span style="color:blue">csv_table_address</span>) on a website. 
 
 To accomplish this, the following steps are taken:
-1. The function <span style="color:red">Airium</span> in the module <span style="color:red">airium</span> is remaned <span style="color:red">a</span> for convience. *Note: the function <span style="color:red">a</span> will be used to easily transform python to HTML syntax.*
+1. The function <span style="color:red">Airium</span> from the module <span style="color:red">airium</span> is remaned <span style="color:blue">a</span> for convience. *Note: the function <span style="color:red">a</span> will be used to easily transform python to HTML syntax.*
 2. The file titled "<span style="color:blue">table.html</span>" is created and renamed <span style="color:blue">filename_html</span> within the function. 
-3. The <span style="color:blue">filename_html</span> is then opened in write (<span style="color:blue">w</span>) mode. *Note: write (<span style="color:blue">w</span>) mode will cause <span style="color:blue">filename_html</span> to be overwritten everytime the function <span style="color:red">csv_table_to_html</span> is run.*
-4. The declaration '<!DOCTYPE html>' is added to <span style="color:blue">filename_html</span>.
-5.  Within the HTML'<head>' tag:
+3. The <span style="color:blue">filename_html</span> is then opened in write (<span style="color:blue">w</span>) mode as <span style="color:blue">f</span>. *Note: write (<span style="color:blue">w</span>) mode will cause <span style="color:blue">table.html</span> to be overwritten everytime the function <span style="color:red">csv_table_to_html</span> is run.*
+4. The declaration <<span style="color:blue">!DOCTYPE html</span>> is added to <span style="color:blue">a</span>.
+5.  Within the HTML <<span style="color:blue">head</span>> tag:
     - "<span style="color:blue">utf-8</span>" is defined as the character set.
     - The HTML contents are formatted to display based on the divice width.
     - The title of the HTML is set to "<span style="color:blue">HTML Table Display</span>".
-    - The table headers (<span style="color:blue">th</span>) and table data (<span style="color:blue">td</span>) are padded by 3 pixles.
-    - The HTML function <span style="color:red">hover</span> is added so that every table row (<span style="color:blue">tr</span>) the user's mouse hovers over in the website is highlighted light grey (#D3D3D3).
-    - A 1 pixel black border is added around the entire <span style="color:blue">table</span>, each table header (<span style="color:blue">th</span>), and table data (<span style="color:blue">td</span>).
-    - The <span style="color:blue">border-collapse</span> is set to <span style="color:blue">collapse</span> so that there is no space between each cell of the table.
+    - The table headers (<<span style="color:blue">th</span>>) and table data (<<span style="color:blue">td</span>>) are padded by 3 pixles.
+    - The HTML function <span style="color:red">hover</span> is used so that every table row (<<span style="color:blue">tr</span>>) the user's mouse hovers over in the website is highlighted light grey (represented by the hex code: #D3D3D3).
+    - A 1 pixel black border is added around the entire <<span style="color:blue">table</span>>, each table header (<<span style="color:blue">th</span>>), and table data (<<span style="color:blue">td</span>>).
+    - The function <span style="color:red">border-collapse</span> is set to <span style="color:blue">collapse</span> so that there is no space between each cell of the table.
 6. A HTML'<bodyd>' tag is created with the tags <table> and <tbody> nested inside of it.
-7. Within the HTML'<tbody>' tag:
+7. Within the HTML <<span style="color:blue">tbody</span>> tag:
     - A for loop is created to iterate through each element (<span style="color:blue">i</span>) in the array/nested-list, <span style="color:blue">list</span>, created in <span style="color:orange">Section 2</span>. *Note: each element (<span style="color:blue">i</span>) in the array/nested-list, <span style="color:blue">list</span> repersents one row in the original CSV table.*
-    - Within this for loop, a table row is created using the HTML tag <tr>. Within the HTML'<tr>' tag:
+    - Within this for loop, a table row is created using the HTML tag <<span style="color:blue">tr</span>>. Within the HTML <<span style="color:blue">tr</span>> tag:
       - A second for loop is created to iterate through each element (<span style="color:blue">j</span>) in <span style="color:blue">i</span>. *Note: each element (<span style="color:blue">j</span>) in <span style="color:blue">i</span> repersents the values within one row in the original CSV table.*
-      - An if/else statement is used so that the first row of <span style="color:blue">list</span> (<span style="color:blue">i</span> == 0) is nested within the table header tag (<span style="color:blue">th</span>) and every other row (<span style="color:blue">i</span> != 0) is nested within the table data tag (<span style="color:blue">td</span>)
+      - An if/else statement is used so that the first row of <span style="color:blue">list</span> (<span style="color:blue">i</span> == 0) is nested within the HTML table header tag (<<span style="color:blue">th</span>>) and every other row (<span style="color:blue">i</span> != 0) is nested within the HTML table data tag (<<span style="color:blue">td</span>>).
 8. Once this process has repeated for all the values (<span style="color:blue">j</span>) in every line (<span style="color:blue">i</span>) of the array/nested-list <span style="color:blue">list</span>, the for loops are broken.
 9. All of the HTML code that was added to <span style="color:blue">a</span> is then converted into a string titled <span style="color:blue">html</span>.
 10. <span style="color:blue">html</span> is appended to the file <span style="color:blue">f</span> ("<span style="color:blue">table.html</span>") and the file <span style="color:blue">f</span> is closed.
