@@ -19,7 +19,7 @@ def table_to_html(table_address, delineator, filename_html):
                 a.meta(charset="utf-8")
                 a.meta(name="viewport", content="width=device-width, initial-scale=1.0")
                 with a.title():
-                    a("Ch3:Table_3")
+                    a(filename_html)
                 with a.style():
                     a("th, td \n"
                     "\t\t{padding: 3px;}\n"
