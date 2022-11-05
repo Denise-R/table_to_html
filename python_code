@@ -47,12 +47,13 @@ def table_to_html(table_address, delineator, filename_html):
 
 
 # To use the function:
+    # TSV Source File
+        table_address = "C:\\folder1\\folder2\\folder3\\folder4\\tsv_example.tsv"
+        filename_html = "tsv_example.html"
+        table_to_html(table_address, "\t", filename_html)
 
-table_address = "C:\\folder1\\folder2\\folder3\\folder4\\tsv_example.tsv"
-filename_html = "tsv_example.html"
-table_to_html(table_address, "\t", filename_html)
-
-table_address = "C:\\folder1\\folder2\\folder3\\folder4\\csv_example.csv"
-filename_html = "csv_example.html"
-table_to_html(table_address, ",", filename_html)
+    # CSV Source File
+        table_address = "C:\\folder1\\folder2\\folder3\\folder4\\csv_example.csv"
+        filename_html = "csv_example.html"
+        table_to_html(table_address, ",", filename_html)
 
