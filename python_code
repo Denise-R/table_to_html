@@ -1,18 +1,17 @@
 import re
 import airium
 
-def csv_table_to_html(csv_table_address):
-    csv_table = open(csv_table_address, "r")
+def table_to_html(table_address, delineator, filename_html):
+    table = open(table_address, "r")
     list = []
-    for line in csv_table.readlines():
+    for line in table.readlines():
         x = re.split("\\n", line)
         y = str(x[0])
-        z = re.split(",", y)
+        z = re.split(delineator, y)
         list.append(z)
-    csv_table.close()
+    table.close()
 
     a = airium.Airium()
-    filename_html = "demo.html"
     with open(filename_html, 'w') as f:
         a('<!DOCTYPE html>')
         with a.html(lang="pl"):
@@ -20,7 +19,7 @@ def csv_table_to_html(csv_table_address):
                 a.meta(charset="utf-8")
                 a.meta(name="viewport", content="width=device-width, initial-scale=1.0")
                 with a.title():
-                    a("HTML Table Display")
+                    a("Ch3:Table_3")
                 with a.style():
                     a("th, td \n"
                     "\t\t{padding: 3px;}\n"
@@ -37,7 +36,7 @@ def csv_table_to_html(csv_table_address):
                             with a.tr():
                                 for j in i:
                                     if index_i == 0:
-                                        with a.th():
+                                        with a.th(style="background-coor:#D3D3D3;"):
                                             a(j)
                                     else:
                                         with a.td():
@@ -46,6 +45,14 @@ def csv_table_to_html(csv_table_address):
         f.write(html)
     f.close()
 
+
 # To use the function:
-csv_table_address = "C:\\folder1\\folder2\\folder3\\folder4\\example.csv"
-csv_table_to_html(csv_table_address)
+
+table_address = "C:\\folder1\\folder2\\folder3\\folder4\\tsv_example.tsv"
+filename_html = "tsv_example.html"
+table_to_html(table_address, "\t", filename_html)
+
+table_address = "C:\\folder1\\folder2\\folder3\\folder4\\csv_example.csv"
+filename_html = "csv_example.html"
+table_to_html(table_address, ",", filename_html)
+
