@@ -36,7 +36,7 @@ def table_to_html(table_address, delineator, filename_html):
                             with a.tr():
                                 for j in i:
                                     if index_i == 0:
-                                        with a.th(style="background-coor:#D3D3D3;"):
+                                        with a.th(style="background-color:#D3D3D3;"):
                                             a(j)
                                     else:
                                         with a.td():
